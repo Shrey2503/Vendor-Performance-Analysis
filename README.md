@@ -294,9 +294,8 @@ Dashboard screenshots and other project visuals can be placed inside:
 ![Executive Overview](https://github.com/Shrey2503/Vendor-Performance-Analysis/blob/main/IMAGES/Executive%20Overview.png)
 
 ![Vendor Performance](https://github.com/Shrey2503/Vendor-Performance-Analysis/blob/main/IMAGES/Vendor%20Performance.png)
-```
 
----
+
 
 ## 🔮 Future Improvements
 
@@ -311,7 +310,6 @@ Possible improvements include:
 * Adding automated anomaly detection
 * Connecting Power BI directly to the database
 
----
 
 ## 👨‍💻 Author
 
@@ -319,7 +317,6 @@ Possible improvements include:
 
 Data Analytics Project
 
----
 
 ## 📄 License
 
