@@ -1,0 +1,7 @@
+pandas
+sqlalchemy
+jupyter
+notebook
+matplotlib
+seaborn
+numpy
