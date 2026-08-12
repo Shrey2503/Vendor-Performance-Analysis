@@ -315,7 +315,7 @@ Possible improvements include:
 
 ## 👨‍💻 Author
 
-###Shreyash Vats
+**Shreyash Vats**
 
 Data Analytics Project
 
