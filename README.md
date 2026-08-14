@@ -1,29 +1,29 @@
-# Vendor Performance Analysis
+# 📊 Vendor Performance Analysis
 
-## 📊 Project Overview
+An end-to-end **Data Analytics project** analyzing vendor sales, purchasing, profitability, inventory efficiency, and freight costs using **Python, SQL, SQLite, and Power BI**.
 
-This project focuses on analyzing vendor performance using sales, purchasing, inventory, pricing, and freight data.
-
-The project follows an end-to-end data analytics workflow:
+The project follows a complete analytics workflow:
 
 **Raw Data → Data Ingestion → SQLite Database → Data Cleaning & Transformation → Vendor Analysis → Business Insights → Power BI Dashboard**
 
-The objective is to identify vendor performance patterns, profitability, sales performance, inventory efficiency, and purchasing opportunities that can support better business decisions.
-
 ---
 
-## 🎯 Objectives
+## 🎯 Project Objective
 
-- Analyze vendor sales and purchasing performance
-- Identify high-performing and low-performing vendors
-- Evaluate vendor profitability
-- Analyze purchase and sales quantities
-- Calculate profit margins
-- Measure stock turnover
-- Compare sales against purchasing costs
-- Analyze freight costs
-- Identify opportunities for improving vendor and inventory performance
-- Present business insights through an interactive Power BI dashboard
+The objective of this project is to evaluate vendor performance and identify opportunities for improving **sales, profitability, purchasing efficiency, inventory management, and vendor relationships**.
+
+### Key objectives
+
+* Analyze vendor sales and purchasing performance
+* Identify high- and low-performing vendors
+* Evaluate vendor profitability and profit margins
+* Analyze purchase and sales quantities
+* Measure stock turnover
+* Compare sales against purchasing costs
+* Analyze freight costs
+* Evaluate brand-level performance
+* Identify potential purchasing and inventory optimization opportunities
+* Present insights through an interactive Power BI dashboard
 
 ---
 
@@ -65,26 +65,28 @@ Vendor-Performance-Analysis/
 │   └── get_Vendor_summary.py
 │
 ├── LICENSE
-└── README.md
----
+├── README.md
+└── requirements.txt
+```
 
 ---
 
 ## 🛠️ Tools & Technologies
 
-* **Python**
-* **Pandas**
-* **SQL**
-* **SQLite**
-* **Jupyter Notebook**
-* **Power BI**
-* **Git & GitHub**
+| Category        | Tools                |
+| --------------- | -------------------- |
+| Programming     | Python               |
+| Data Analysis   | Pandas, NumPy        |
+| Database        | SQLite, SQL          |
+| Visualization   | Power BI, Matplotlib |
+| Development     | Jupyter Notebook     |
+| Version Control | Git, GitHub          |
 
 ---
 
 ## 📁 Dataset
 
-The project uses multiple source datasets covering:
+The project uses multiple datasets covering:
 
 * Beginning inventory
 * Ending inventory
@@ -93,34 +95,36 @@ The project uses multiple source datasets covering:
 * Sales
 * Vendor invoices
 
-These datasets are used as the raw input for the analysis and database pipeline.
+These datasets form the raw input for the data ingestion, transformation, and analysis pipeline.
 
-> **Note:** The original `purchases` and `sales` files are very large, so they may not be included directly in this GitHub repository due to GitHub's individual file-size limitations.
+> **Note:** The original `purchases` and `sales` datasets are large and may not be included directly in the repository because of GitHub file-size limitations.
 
 ---
 
-## 🔄 Data Pipeline
+## 🔄 Data Analytics Pipeline
 
 ### 1. Data Ingestion
 
-The raw CSV files are read using Python and loaded into an SQLite database.
+Raw CSV files are read using Python and loaded into an **SQLite database**.
 
-The ingestion process automatically reads CSV files from the `DATA` directory and creates corresponding database tables.
+The ingestion script automatically processes the available datasets from the `DATA` directory and creates the corresponding database tables.
 
-### 2. Data Preparation
+### 2. Data Cleaning & Transformation
 
-The project performs data cleaning and transformation, including:
+The project performs data preparation tasks including:
 
 * Data type conversion
 * Missing-value handling
-* Removing unnecessary spaces from text fields
+* Text cleaning
+* Data aggregation
+* Joining multiple datasets
 * Creating calculated business metrics
 
-### 3. Vendor Summary
+### 3. Vendor-Level Analysis
 
-Purchase, sales, and freight information are combined to create a comprehensive vendor-level summary.
+Purchase, sales, and freight information are combined to create a comprehensive vendor-level dataset.
 
-The analysis includes:
+Key metrics include:
 
 * Total Purchase Quantity
 * Total Purchase Dollars
@@ -132,27 +136,25 @@ The analysis includes:
 
 ### 4. Performance Metrics
 
-The project calculates several important performance indicators:
-
-**Gross Profit**
+#### Gross Profit
 
 ```text
 Gross Profit = Total Sales Dollars - Total Purchase Dollars
 ```
 
-**Profit Margin**
+#### Profit Margin
 
 ```text
 Profit Margin = (Gross Profit / Total Sales Dollars) × 100
 ```
 
-**Stock Turnover**
+#### Stock Turnover
 
 ```text
 Stock Turnover = Total Sales Quantity / Total Purchase Quantity
 ```
 
-**Sales-to-Purchase Ratio**
+#### Sales-to-Purchase Ratio
 
 ```text
 Sales-to-Purchase Ratio =
@@ -163,11 +165,11 @@ Total Sales Dollars / Total Purchase Dollars
 
 ## 📈 Exploratory Data Analysis
 
-Exploratory Data Analysis is performed to understand:
+Exploratory Data Analysis is used to investigate:
 
 * Vendor performance
 * Brand performance
-* Sales trends
+* Sales performance
 * Purchasing behavior
 * Profitability
 * Inventory efficiency
@@ -179,30 +181,39 @@ The analysis notebooks are available in the `NOTEBOOK` directory.
 
 ## 📊 Power BI Dashboard
 
-The final analysis is presented through an interactive Power BI dashboard.
+The final analysis is presented through an interactive **Power BI dashboard**.
 
-The dashboard is designed to provide a business-friendly view of:
+The dashboard provides a business-focused view of:
 
 * Vendor performance
 * Sales performance
 * Purchase performance
-* Profitability
-* Inventory-related metrics
+* Gross profit
+* Profit margin
+* Inventory efficiency
 * Vendor comparisons
-* Key business insights
+* Key performance indicators
 
-The Power BI file is available in the `POWER BI` directory.
+### Dashboard Preview
+
+#### Executive Overview
+
+![Executive Overview](./IMAGES/Executive%20Overview.png)
+
+#### Vendor Performance
+
+![Vendor Performance](./IMAGES/Vendor%20Performance.png)
 
 ---
 
-## 💡 Key Business Questions
+## 💡 Business Questions
 
 This project helps answer questions such as:
 
 1. Which vendors generate the highest sales?
 2. Which vendors generate the highest gross profit?
-3. Which vendors have the best profit margins?
-4. Which vendors have high purchasing costs but relatively low sales?
+3. Which vendors have the strongest profit margins?
+4. Which vendors have high purchasing costs relative to sales?
 5. Which vendors have strong stock turnover?
 6. Which brands contribute significantly to vendor performance?
 7. How do sales compare with purchasing costs?
@@ -211,30 +222,43 @@ This project helps answer questions such as:
 
 ---
 
+## 📦 Project Outputs
+
+The analysis produces processed datasets including:
+
+* `Brand_performance.csv`
+* `vendor_performance.csv`
+* `Vendor_sales_summary.csv`
+* `Vendor_sales_summary_cleaned.csv`
+
+These outputs are used for further analysis and Power BI visualization.
+
+---
+
 ## 🚀 How to Run the Project
 
-### Step 1: Clone the Repository
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Vendor-Performance-Analysis.git
+git clone https://github.com/Shrey2503/Vendor-Performance-Analysis.git
 cd Vendor-Performance-Analysis
 ```
 
-### Step 2: Install Required Libraries
+### 2. Install dependencies
 
 ```bash
-pip install pandas sqlalchemy
+pip install -r requirements.txt
 ```
 
-### Step 3: Place Raw Data
+### 3. Add the raw datasets
 
-Place the available raw CSV datasets inside:
+Place the available CSV files inside:
 
 ```text
 DATA/
 ```
 
-### Step 4: Create the Database
+### 4. Create the SQLite database
 
 Run:
 
@@ -242,9 +266,9 @@ Run:
 python SCRIPTS/ingestion_db.py
 ```
 
-This loads the CSV datasets into the SQLite database.
+This loads the available CSV datasets into the SQLite database.
 
-### Step 5: Generate Vendor Summary
+### 5. Generate the vendor summary
 
 Run:
 
@@ -252,9 +276,9 @@ Run:
 python SCRIPTS/get_Vendor_summary.py
 ```
 
-This creates the vendor summary and calculated performance metrics.
+This generates the vendor-level summary and calculated performance metrics.
 
-### Step 6: Explore the Analysis
+### 6. Explore the analysis
 
 Open the notebooks inside:
 
@@ -262,7 +286,7 @@ Open the notebooks inside:
 NOTEBOOK/
 ```
 
-### Step 7: View the Dashboard
+### 7. Open the Power BI dashboard
 
 Open:
 
@@ -270,53 +294,35 @@ Open:
 POWER BI/Vendors_Performance_Analysis.pbix
 ```
 
-in Microsoft Power BI Desktop.
+using **Microsoft Power BI Desktop**.
 
 ---
-
-## 📌 Project Outputs
-
-The project produces several analysis datasets, including:
-
-* `Brand_performance.csv`
-* `vendor_performance.csv`
-* `Vendor_sales_summary.csv`
-* `Vendor_sales_summary_cleaned.csv`
-
-These files contain processed information used for further analysis and visualization.
-
----
-
-## 📷 Dashboard Preview
-
-Dashboard screenshots and other project visuals can be placed inside:
-
-![Executive Overview](https://github.com/Shrey2503/Vendor-Performance-Analysis/blob/main/IMAGES/Executive%20Overview.png)
-
-![Vendor Performance](https://github.com/Shrey2503/Vendor-Performance-Analysis/blob/main/IMAGES/Vendor%20Performance.png)
-
-
 
 ## 🔮 Future Improvements
 
-Possible improvements include:
+Potential improvements include:
 
 * Automating the complete data pipeline
 * Adding scheduled data refresh
 * Improving dashboard interactivity
-* Adding more vendor-level KPIs
-* Adding predictive sales analysis
+* Adding additional vendor-level KPIs
 * Developing vendor segmentation
-* Adding automated anomaly detection
+* Adding predictive sales analysis
+* Implementing automated anomaly detection
 * Connecting Power BI directly to the database
 
+---
 
 ## 👨‍💻 Author
 
 **Shreyash Vats**
 
-Data Analytics Project
+Aspiring Data Analyst
+**SQL | Python | Power BI | Excel**
 
+[GitHub](https://github.com/Shrey2503) · [LinkedIn](https://www.linkedin.com/in/shreyash-vats-1a22232a4/)
+
+---
 
 ## 📄 License
 
